@@ -28,5 +28,6 @@ jobs:
       - name: Sync README to Target Repo
         env:
           API_TOKEN: ${{ secrets.API_TOKEN }}
+          SOURCE_REPO: kk1708/sync-tool
           TARGET_REPO: kk1708/sync-target
         run: node src/index.js
