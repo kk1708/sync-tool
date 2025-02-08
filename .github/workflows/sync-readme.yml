@@ -1,0 +1,32 @@
+name: Sync README to Target Repo
+
+on:
+  push:
+    paths:
+      - README.md
+
+jobs:
+  sync-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the source repository
+      - name: Checkout Source Repo
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      # Step 3: Install dependencies (if needed)
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run the sync script
+      - name: Sync README to Target Repo
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
+          TARGET_REPO: kk1708/sync-target
+        run: node src/index.js
