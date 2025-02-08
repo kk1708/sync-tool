@@ -3,7 +3,7 @@ This Node.js tool automates the process of syncing the README.md file between tw
 
 It fetches the source README, compares it with the target repository's README, and updates the target repository if any changes are detected.
 
-New info.
+New info added.
 
 ### Features
 - Fetches and updates the README file using GitHub's REST API.
